@@ -1,6 +1,7 @@
-import { useState } from "react"
-import { Validation } from '../../validacion'
-import style from './Form.module.css'
+import { useState } from "react";
+import { Validation } from '../../validacion';
+import styles from '../Form/Form.module.css';
+import logo from '../../assets/logo.png';
 
 const Form = (props)=>{
     const {login} = props
@@ -30,8 +31,6 @@ const Form = (props)=>{
     
     }
 
-    
-
     // useEffect(()=>{
     //     setErrors({
     //         ...errors,
@@ -40,27 +39,35 @@ const Form = (props)=>{
     // },[])
 
     return (
-        <div className={style.loginbox}>
-            <p>Login</p>
+        <div className={styles.container}>
+        <figure>
+        <img src= {logo} className={styles.logo} alt="Rick and Morty Logo"/>
+        </figure>
+        <br />
+        <br />
+        <br />
+        <br />
+            <p className={styles.login}>Login</p>
+            <br />
             <form onSubmit={handleSubmit}>
-                <div className={style.userbox}>
-                <input required="" type="text" name="email" value={userData.email} onChange={handleChange} />
-                <label htmlFor="email">Email</label>
-                {errors.email !== ''? <span className={style.error}>{errors.email}</span> : ''}
+                <div>
+                <input required="" type="text" name="email" value={userData.email} className={styles.input} placeholder= "Email address" onChange={handleChange} />
+                <label htmlFor="email"></label>
+                {errors.email !== ''? <span className={styles.error}>{errors.email}</span> : ''}
                 </div>
-                <br /><br /><br />
-                <div className={style.userbox}>
-                <input required="" type="text" name="password" value={userData.password} onChange={handleChange}/>
-                {errors.password!== ''? <span className={style.error}>{errors.password}</span> : ''}
-                <label htmlFor="password">Password</label>
+                <br />
+                <br />
+
+                <div>
+                <input required="" type="text" name="password" value={userData.password} className={styles.input} placeholder="Password" onChange={handleChange}/>
+                {errors.password!== ''? <span className={styles.error}>{errors.password}</span> : ''}
+                <label htmlFor="password"></label>
                 </div>
                 
                 <div>
-                <button type="submit" className={style.btnn}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <br />
+                    <br />
+                <button type="submit" className={styles.button}>
                     Submit
                 </button>
                 </div>

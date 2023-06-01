@@ -1,5 +1,5 @@
 
-import style from './card.module.css'
+import styles from './card.module.css'
 import { Link } from 'react-router-dom';
 import { addFav, removeFav } from '../../Redux/actions';
 import { connect } from 'react-redux';
@@ -8,14 +8,7 @@ import { useState, useEffect } from 'react';
 
 const Card = ({ id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites }) => {
 
-   let colorFondo = '';
-   if (status === 'Dead') {
-      colorFondo = '#9e0606';
-   } else if (status === 'Alive') {
-      colorFondo = '#176108';
-   } else if (status === 'unknown') {
-      colorFondo = '#e47309';
-   }
+  
    const [isFav, setIsFav] = useState(false);
 
    const handleFavorite = () => {
@@ -33,24 +26,33 @@ const Card = ({ id, name, status, species, gender, origin, image, onClose, addFa
 
 
    return (
-      <div id="id-card" className={style.contenedor}>
-          {
-          (
-            <button className={style.favorite}  onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>) 
-        }
-         <img className={style.imagen} src={`${image}`} alt='' />
-         <button  className={style.close} onClick={onClose}>X</button>
-         <h2 className={style.status} style={{ backgroundColor: colorFondo }}>{`${status}`}</h2>
-         <div className={style.container}>
-            <Link className={style.link} to={`/detail/${id}`} >
-               <h2 className={style.name}>{`${name}`} </h2>
+      
+         <div className={styles.card}>
+         <div className={styles.cardHeader}>
+          {(<button className={styles.favorite}  onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>)}
+
+          <div className={styles.estado}>
+					<span className={styles.estadoSpan}></span>
+					<h4>{`${status}`}</h4>
+				</div>
+         </div>
+
+
+         <div className={styles.cardBody}>
+         <figure>
+         <img className={styles.imagen} src={`${image}`} alt='' />
+         </figure>
+         <button  className={styles.close} onClick={onClose}>Close</button>
+         <div className={styles.cardBody}>
+            <Link className={styles.link} to={`/detail/${id}`} >
+               <h2 className={styles.name}>{`${name}`} </h2>
             </Link>
             <h2>{`${species}`}</h2>
             <h2>{`${gender}`}</h2>
             <h2>{`${origin.name}`}</h2>
          </div>
+         </div>
       </div>
-
    );
 }
     

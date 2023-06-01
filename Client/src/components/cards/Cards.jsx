@@ -1,10 +1,10 @@
 import Card from '../card/Card';
-//import style from './cards.module.css';
+import styles from './cards.module.css';
 
 export default function Cards(props) {
    const {characters} = props;
    return(
-      <div>
+      <section className={styles.cards}>
          {characters.map((character) => (
             <Card
             id={character.id}
@@ -18,7 +18,6 @@ export default function Cards(props) {
             onClose={props.onClose}
             /> 
          ))}
-
-      </div>
+      </section>
    )
 }

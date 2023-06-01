@@ -1,21 +1,37 @@
-import style from './About.module.css';
+import styles from './About.module.css';
+import imageAbout from '../../assets/imageAbout.gif';
 
 const About = () => {
     return (
 
-        <div>
-        <span><h2> Bienvenido a mi primera app!</h2></span>
+        <div class= {styles.container}>
+            <h2 class= {styles.h2}> Welcolme to my first app!</h2>
             <br />
             <br />
-            <div className={style.about}>
-            <p> Hola! Mi nombre es Natalia y estoy en proceso de ser desarrolladora fullstack!</p>
-            <p> Este proyecto es un ejercicio de aprendizaje y prueba de conceptos básicos de React.</p>
-            <p> Espero que lo disfrutes! </p>
+            <div className={styles.about}>
+            <figure>
+            <img src= {imageAbout} className={styles.imageAbout} alt="Rick and Morty img"/>
+            </figure>
+            <br />
+            <br />
+            <h3> Hi, there!</h3>
+            <br />
+            <br />
+            <br />
+            <p> This project is an exercise where I am learning and testing</p>
+                <br />
+                the basics of the full stack development.
+                <br />
+                <br />
+                <br />
+               <p className={styles.enjoy}> I hope you enjoy it!</p>
+               </div>
+                <br />
+                <br />
             <br />
         </div>
-        </div>
+    
     )
 }
-
 
 export default About;

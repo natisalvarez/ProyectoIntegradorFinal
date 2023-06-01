@@ -1,4 +1,21 @@
-.App {
-   text-align: center;
-   background-color: rgba(221, 221, 221, 0);
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  flex-wrap: wrap;
+  padding: 20px;
+  border: solid beige 1px;
+  margin:auto;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding: 11px;
+  text-align:center;
 }

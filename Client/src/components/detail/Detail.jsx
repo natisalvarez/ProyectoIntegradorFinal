@@ -22,7 +22,7 @@ axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
 
 console.log(character);
 return (
-    <div className={style.detail}>
+    <div className={style.container}>
         
         <h2>{character.name}</h2>
         <img src={character.image} alt={character.name} />
