@@ -57,6 +57,7 @@ const Form = (props)=>{
                 </div>
                 <br />
                 <br />
+                
 
                 <div>
                 <input required="" type="text" name="password" value={userData.password} className={styles.input} placeholder="Password" onChange={handleChange}/>

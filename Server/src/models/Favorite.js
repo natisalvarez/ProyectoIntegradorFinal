@@ -3,8 +3,8 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
    sequelize.define('Favorite', {
       id: {
-         type: DataTypes.INTEGER,
-         allowNull: false,
+         type: DataTypes.INTEGER, /*tipo de dato del ID, en esta caso numero entero */
+         allowNull: false, /*el campo este no puede ser nulo, si no ingresas los dato aparece error*/ 
          primaryKey: true
       },
       name: {
@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
          allowNull: false,
       },
       status: {
-         type: DataTypes.ENUM(Alive - Dead - unknown),
+         type: DataTypes.ENUM('Alive', 'Dead', 'unknown'), /* Tiene que ser si o si uno de los tres */
          allowNull: false
       },
       species: {
@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
          allowNull: false
       },
       gender: {
-         type: DataTypes.ENUM(Female - Male - Genderless - unknown),
+         type: DataTypes.ENUM('Female', 'Male', 'Genderless', 'unknown'),
          allowNull: false
       },
       origin: {
@@ -33,5 +33,5 @@ module.exports = (sequelize) => {
       },
       },
       
-      { timestamps: false });
+      { timestamps: false }); /* Para que no aparezca auditoria, viene por configuración*/
       };
