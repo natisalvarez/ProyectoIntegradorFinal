@@ -1,9 +1,9 @@
 
 
 
-const Validation = ({email,password},name)=>{
+const Validation = (userData,name)=>{
     if(name ==='email'){
-        if(/\S+@\S+\.\S+/.test(email) && email.length <=35){
+        if(/\S+@\S+\.\S+/.test(userData.email) && userData.email.length <=35){
             return ''
         }else{
             return 'Ingresa un email valido'
@@ -11,7 +11,7 @@ const Validation = ({email,password},name)=>{
     }
 
     if(name==='password'){
-        if(password && /^(?=\w*\d)(?=\w*[a-z])\S{6,10}$/.test(password)){
+        if(userData.password && /^(?=\w*\d)(?=\w*[a-z])\S{6,10}$/.test(userData.password)){
             return ''
         }else{
             return 'Ingresa una password valida'

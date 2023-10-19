@@ -26,7 +26,6 @@ export const addFav = (character)=>{
                 type: 'REMOVE_FAV',
                 payload: data,
           });
-          
        };
     } catch (error) {
        console.log(error.message);

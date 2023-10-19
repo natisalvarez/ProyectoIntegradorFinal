@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Validation } from '../../validacion';
 import styles from '../Form/Form.module.css';
 import logo from '../../assets/logo.png';
+import gif from '../../assets/2.gif';
 
 const Form = (props)=>{
     const {login} = props
@@ -40,28 +41,41 @@ const Form = (props)=>{
 
     return (
         <div className={styles.container}>
-        <figure>
+        <div className={styles.loginBox}>
         <img src= {logo} className={styles.logo} alt="Rick and Morty Logo"/>
-        </figure>
-        <br />
-        <br />
-        <br />
-        <br />
+        <img src= {gif} className={styles.gif} alt="Rick and Morty Logo"/>
+        
             <p className={styles.login}>Login</p>
             <br />
             <form onSubmit={handleSubmit}>
                 <div>
-                <input required="" type="text" name="email" value={userData.email} className={styles.input} placeholder= "Email address" onChange={handleChange} />
+                <input required="" 
+                type="text" 
+                name="email" 
+                value={userData.email} 
+                className={styles.input} 
+                placeholder= "Email address" 
+                onChange={handleChange} />
+
                 <label htmlFor="email"></label>
-                {errors.email !== ''? <span className={styles.error}>{errors.email}</span> : ''}
                 </div>
                 <br />
+                {errors.email !== ''? 
+                <span className={styles.error}>{errors.email}</span> : ''}
+        
                 <br />
-                
 
                 <div>
-                <input required="" type="text" name="password" value={userData.password} className={styles.input} placeholder="Password" onChange={handleChange}/>
-                {errors.password!== ''? <span className={styles.error}>{errors.password}</span> : ''}
+                <input required="" 
+                type="text" 
+                name="password" 
+                value={userData.password} 
+                className={styles.input} 
+                placeholder="Password" 
+                onChange={handleChange}/>
+                <br />
+                {errors.password!== ''? 
+                <span className={styles.error}>{errors.password}</span> : ''}
                 <label htmlFor="password"></label>
                 </div>
                 
@@ -73,6 +87,7 @@ const Form = (props)=>{
                 </button>
                 </div>
             </form>
+        </div>
         </div>
     )
 }
