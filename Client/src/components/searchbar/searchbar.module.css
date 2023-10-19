@@ -1,17 +1,26 @@
-* {
-	box-sizing: border-box;
-	margin: 0px;
-	padding: 0%;
-}
 
 .container {
 	display: flex;
-	position: sticky;
-	top: 0;
-	background-color:#B4DD1E;
-	padding: 5px;
-	align-items: flex-end;
-	justify-content: flex-end;
+	background-color:black;
+	align-items: center;
+	justify-content: center;
+	padding: 2%;
 }
 
+.searchBar{
+	display: flex;
+	width: 40%; 
+	padding:0.5%;
+}
 
+.button{
+	padding:0.5%;
+	background-color: black;
+	color: white;
+	transition: transform 0.2s;
+}
+
+.button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 10px white; /* Ancho de sombra: 10px, color negro con transparencia */
+}

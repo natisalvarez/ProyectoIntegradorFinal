@@ -64,7 +64,7 @@ function App() {
    return (
       <div className={styles.app}>
         
-         {pathname !== '/' ? <Nav onSearch={onSearch} /> : ''}
+         {pathname !== '/' && '/about' ? <Nav onSearch={onSearch} /> : ''}
          <Routes>
             <Route path='/' element={<Form login={login} />} />
             <Route path='/home' element={<Cards characters={characters} onClose={onClose} />} />
@@ -73,8 +73,7 @@ function App() {
             <Route path='/favorites' element={<Favorites />} />
          </Routes>
       </div>
-   );
-}
+   )};
 
 export default App;
 

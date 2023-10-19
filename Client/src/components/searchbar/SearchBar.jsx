@@ -12,9 +12,14 @@ import { useState } from "react";
 
    return (
       <div class={styles.container}>
-         <input type='search' clasName={styles.searchBar} value={id} placeholder={`Enter ID`} onChange={handleChange}/>
-         <button onClick={()=>onSearch(id)}>Search</button>
-      </div>
+         <input class={styles.searchBar} 
+         type='search' 
+         clasName={styles.searchBar} 
+         value={id} 
+         placeholder={`Enter character ID`} 
+         onChange={handleChange}/>
+         <button class={styles.button} onClick={()=>onSearch(id)}>Search</button>
+         </div>
    );
 }
 

@@ -78,7 +78,6 @@ const Form = (props)=>{
                 <span className={styles.error}>{errors.password}</span> : ''}
                 <label htmlFor="password"></label>
                 </div>
-                
                 <div>
                     <br />
                     <br />
@@ -89,7 +88,7 @@ const Form = (props)=>{
             </form>
         </div>
         </div>
-    )
+    );
 }
 
 export default Form
