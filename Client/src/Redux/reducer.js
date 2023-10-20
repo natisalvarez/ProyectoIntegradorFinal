@@ -30,8 +30,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites: filterChars,
-
       };
+      
     case "ORDER":
 
       const orderChars = state.myFavorites.slice().sort((a, b) => { //fsdf

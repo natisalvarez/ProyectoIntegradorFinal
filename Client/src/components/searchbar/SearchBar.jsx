@@ -1,7 +1,5 @@
 import styles from './searchbar.module.css';
-
 import { useState } from "react";
-
 
    const SearchBar =({onSearch}) =>{
    const [id,setId] = useState('')
@@ -20,7 +18,7 @@ import { useState } from "react";
          onChange={handleChange}/>
          <button class={styles.button} onClick={()=>onSearch(id)}>Search</button>
          </div>
-   );
+   )
 }
 
 export default SearchBar;

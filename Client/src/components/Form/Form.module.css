@@ -64,8 +64,11 @@
 }
 
 .logo {
-  width: 22rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   margin: 5%;
+  align-items: center;
 }
 
 .userBox {

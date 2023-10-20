@@ -71,7 +71,7 @@ const Form = (props)=>{
                 name="password" 
                 value={userData.password} 
                 className={styles.input} 
-                placeholder="Password" 
+                placeholder="Enter any password" 
                 onChange={handleChange}/>
                 <br />
                 {errors.password!== ''? 
